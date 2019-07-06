@@ -96,8 +96,8 @@ public class MenuSettings : MonoBehaviour
         PlayerPrefs.SetInt("ModoJanela", modoJanelaAtivo); //Armazena o valor do modo janela
         PlayerPrefs.SetFloat("Volume", barraVolume.value); //Armazena o valor da barra de volume
 
-        Debug.Log("resolucoes.value == " + resolucoes.value);
-        Debug.Log("resolucoes.value == " + PlayerPrefs.GetInt("Resolucao"));
+        //Debug.Log("resolucoes.value == " + resolucoes.value);
+        //Debug.Log("resolucoes.value == " + PlayerPrefs.GetInt("Resolucao"));
 
         Screen.SetResolution(resolucoesSuportadas[resolucoes.value].width, resolucoesSuportadas[resolucoes.value].height, !modoJanela.isOn); //Altera a Resolução da tela e o modo janela
     }
@@ -116,7 +116,7 @@ public class MenuSettings : MonoBehaviour
         }
         barraVolume.value = PlayerPrefs.GetFloat("Volume"); //Tornará o valor da barra de volume igual o que foi salvo
         resolucoes.value = PlayerPrefs.GetInt("Resolucao");
-        Debug.Log("resolucoes.value == " + PlayerPrefs.GetInt("Resolucao"));
+        //Debug.Log("resolucoes.value == " + PlayerPrefs.GetInt("Resolucao"));
         Screen.SetResolution(resolucoesSuportadas[PlayerPrefs.GetInt("Resolucao")].width, resolucoesSuportadas[PlayerPrefs.GetInt("Resolucao")].height, !modoJanela.isOn); //Altera a resolução da tela utilizando os dados que foram salvos.
     }
 
