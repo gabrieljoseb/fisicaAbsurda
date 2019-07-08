@@ -11,7 +11,7 @@ public class GeneralConfig : MonoBehaviour
     [SerializeField]
     private GameObject pause;
 
-    private bool primeiroVezMenu; //Mostra se é a primeira vez dele no menu após abrir o jogo.
+    private bool primeiraVezMenu; //Mostra se é a primeira vez dele no menu após abrir o jogo.
     static public bool estaPausado; //Variável que registra se o jogo está pausado ou não
     static public bool menuAtivado; //Variável que registra se o jogo está no Menu Inicial ou não
 
@@ -23,10 +23,10 @@ public class GeneralConfig : MonoBehaviour
 
     private void Start()
     {
-        primeiroVezMenu = true;
+        primeiraVezMenu = true;
         MenuInicial(true); //Ativa o Menu
 
-        primeiroVezMenu = true;
+        primeiraVezMenu = true;
         MenuInicial(menuAtivo); //Será mantido temporariamente, apenas para facilitar no desenvolvimento do jogo.
     }
 
@@ -68,13 +68,13 @@ public class GeneralConfig : MonoBehaviour
     {
         menuAtivado = statusMenu;
 
-        if ((statusMenu && primeiroVezMenu) || !statusMenu) //Se o menu for ativo pela primeira vez OU o menu for desativado ele irá...
+        if ((statusMenu && primeiraVezMenu) || !statusMenu) //Se o menu for ativo pela primeira vez OU o menu for desativado ele irá...
         {
             PararOJogo(statusMenu);
             menuPrincipal.SetActive(statusMenu);
-            primeiroVezMenu = false;
+            primeiraVezMenu = false;
         }
-        else if (statusMenu && !primeiroVezMenu) //Se ele for ativo sem ser a primeira vez..
+        else if (statusMenu && !primeiraVezMenu) //Se ele for ativo sem ser a primeira vez..
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Main"); //Reinicia o Jogo
         }

@@ -9,12 +9,12 @@ public class TiroDevagar : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, destroyTime); //Destruirá o objeto após o tempo de 'destroyTime'
+        Destroy(gameObject, destroyTime); //destruirá o objeto após o tempo de 'destroyTime'
     }
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime); //Instancia o tiro para a direita
+        transform.Translate(Vector3.right * speed * Time.deltaTime); //instancia o tiro para a direita
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

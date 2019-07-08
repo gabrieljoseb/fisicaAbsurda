@@ -12,12 +12,12 @@ public class Player : MonoBehaviour
 
     static public bool isDead = false; //Registra se o Player está morto ou não.
 
-
     void Start()
     {
 
     }
-    
+
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
