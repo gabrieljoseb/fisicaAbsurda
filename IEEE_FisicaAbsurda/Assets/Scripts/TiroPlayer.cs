@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TiroPlayer : MonoBehaviour
 {
-    public float speed = 10; //velocidade da bala
-    public float destroyTime = 1f; //tempo para que a bala suma
+    public float speed = 10; //Velocidade do tiro
+    public float destroyTime = 1f; //Tempo para que o tiro suma
     void Start()
     {
-        Destroy(gameObject, destroyTime); //destruirá o objeto após o tempo de 'destroyTime'
+        Destroy(gameObject, destroyTime); //Destruirá o objeto após o tempo de 'destroyTime'
     }
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime); //instancia o tiro para a direita
+        transform.Translate(Vector3.right * speed * Time.deltaTime); //Instancia o tiro para a direita
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

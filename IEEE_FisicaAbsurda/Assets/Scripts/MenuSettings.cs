@@ -18,11 +18,6 @@ public class MenuSettings : MonoBehaviour
 
 
     //====================BOTÕES====================
-    public void Jogar()
-    {
-        MudarOrdem();
-        this.gameObject.SetActive(false);
-    }
 
     public void Configuracao(bool ativo)
     {
