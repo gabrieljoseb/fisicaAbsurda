@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform shotSpawner;
-    private float fireRate1 = 2f; //tiro devagar
-    private float fireRate2 = 0.01f; //tiro laser
+    private float fireRateSlow = 2f; //tiro devagar
+    private float fireRateSenoidal = 1.2f; //tiro senoidal
     private float nextFire;
 
     static public bool isDead = false; //Registra se o Player está morto ou não.
@@ -22,12 +22,16 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
         {
-            nextFire = Time.time + fireRate1;
+            nextFire = Time.time + fireRateSlow;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
         }
-        if (Input.GetButton("Fire2") && Time.time > nextFire) //tiro laser
+        if (Input.GetButton("Fire2")) //tiro laser
         {
-            nextFire = Time.time + fireRate2;
+            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+        }
+        if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
+        {
+            nextFire = Time.time + fireRateSenoidal;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
         }
     }

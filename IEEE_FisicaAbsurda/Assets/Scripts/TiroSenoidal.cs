@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiroLaser : MonoBehaviour
+public class TiroSenoidal : MonoBehaviour
 {
-    public float speed = 2.5f; //velocidade da bala
-    public float destroyTime = 3.5f; //tempo para que a bala suma
+    public float speed = 5; //velocidade da bala
+    public float destroyTime = 2.5f; //tempo para que a bala suma
+    public float amplitude = 0.09f;
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class TiroLaser : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime); //instancia o tiro para a direita
+        transform.Translate(Vector3.up * Mathf.Sin(Time.time * speed) * amplitude);
+        
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

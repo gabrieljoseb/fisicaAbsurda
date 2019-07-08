@@ -5015,7 +5015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151dd6052c287f84eafbbeaa83ca6c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAtivo: 1
+  menuAtivo: 0
   menuPrincipal: {fileID: 29535303}
   pause: {fileID: 1995041040}
 --- !u!4 &2025029043
