@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiroPlayer : MonoBehaviour
+public class TiroLaser : MonoBehaviour
 {
-    public float speed = 10; //velocidade da bala
-    public float destroyTime = 1f; //tempo para que a bala suma
+    public float speed = 4; //velocidade da bala
+    public float destroyTime = 7; //tempo para que a bala suma
+
     void Start()
     {
         Destroy(gameObject, destroyTime); //destruirá o objeto após o tempo de 'destroyTime'

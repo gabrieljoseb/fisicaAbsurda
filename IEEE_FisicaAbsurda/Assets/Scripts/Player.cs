@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform shotSpawner;
-    private float fireRate = 0.5f;
+    private float fireRate1 = 2f; //tiro devagar
+    private float fireRate2 = 0.01f; //tiro laser
     private float nextFire;
 
 
@@ -18,9 +19,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
         {
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + fireRate1;
+            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+        }
+        if (Input.GetButton("Fire2") && Time.time > nextFire) //tiro laser
+        {
+            nextFire = Time.time + fireRate2;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
         }
     }
