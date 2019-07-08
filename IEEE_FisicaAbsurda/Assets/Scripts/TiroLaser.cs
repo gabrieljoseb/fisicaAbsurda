@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiroPlayer : MonoBehaviour
+public class TiroLaser : MonoBehaviour
 {
-    public float speed = 10; //Velocidade do tiro
-    public float destroyTime = 1f; //Tempo para que o tiro suma
+    public float speed = 4; //velocidade da bala
+    public float destroyTime = 7; //tempo para que a bala suma
+
     void Start()
     {
-        Destroy(gameObject, destroyTime); //Destruirá o objeto após o tempo de 'destroyTime'
+        Destroy(gameObject, destroyTime); //destruirá o objeto após o tempo de 'destroyTime'
     }
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime); //Instancia o tiro para a direita
+        transform.Translate(Vector3.right * speed * Time.deltaTime); //instancia o tiro para a direita
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)

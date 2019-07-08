@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4111517327987603052}
   - component: {fileID: 3239932865182645651}
   - component: {fileID: 2613394843241190705}
+  - component: {fileID: -4639779967975374315}
   m_Layer: 0
   m_Name: Tiro do Player
   m_TagString: Untagged
@@ -44,7 +45,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.10333395, y: -0.02539289}
@@ -75,9 +76,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -88,13 +89,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3245822430717653622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3b9b432d793f8e489e242da3bb3dbda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  destroyTime: 1
+  speed: 2
+  destroyTime: 7
+--- !u!114 &-4639779967975374315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245822430717653622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9594674cb5d69bb4c8f693b44f1c8921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  destroyTime: 7
 --- !u!1 &7006122645695084924
 GameObject:
   m_ObjectHideFlags: 0
