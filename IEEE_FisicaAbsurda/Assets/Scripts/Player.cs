@@ -63,15 +63,27 @@ public class Player : MonoBehaviour
         {
             nextFire = Time.time + fireRateSlow;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+            if (!facingRight)
+            {
+                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+            }
         }
         if (Input.GetButton("Fire2")) //tiro laser
         {
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+            if (!facingRight)
+            {
+                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+            }
         }
         if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
         {
             nextFire = Time.time + fireRateSenoidal;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+            if (!facingRight)
+            {
+                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+            }
         }
     }
 
