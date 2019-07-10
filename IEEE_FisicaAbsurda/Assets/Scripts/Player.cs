@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shotSpawner;
     private float fireRateSlow = 2f; //tiro devagar
-    private float fireRateSenoidal = 1.2f; //tiro senoidal
+    private float fireRateSenoidal = 1f; //tiro senoidal
     private float nextFire;
     private bool facingRight = true;
     private bool jump = false;

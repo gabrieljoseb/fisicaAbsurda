@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MousePosition : MonoBehaviour
 {
+    public Transform shotSpawner;
+
     // script para a arma seguir o cursor do mouse
     void Update()
     {

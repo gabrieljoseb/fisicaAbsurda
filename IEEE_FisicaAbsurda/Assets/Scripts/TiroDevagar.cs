@@ -5,7 +5,7 @@ using UnityEngine;
 public class TiroDevagar : MonoBehaviour
 {
     public float speed = 2; //velocidade da bala
-    public float destroyTime = 7; //tempo para que a bala suma
+    public float destroyTime = 3.5f; //tempo para que a bala suma
 
     void Start()
     {
