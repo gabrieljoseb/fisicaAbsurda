@@ -8,8 +8,13 @@ public class Player : MonoBehaviour
     public float jumpforce;
     public GameObject bulletPrefab;
     public Transform shotSpawner;
+    public Transform shotSpawner1;
+    public Transform shotSpawner2;
+    public Transform shotSpawner3;
+    public Transform shotSpawner4;
     private float fireRateSlow = 2f; //tiro devagar
     private float fireRateSenoidal = 1f; //tiro senoidal
+    private float fireRateEspalhado = 1.3f; //tiro espalhado
     private float nextFire;
     private bool facingRight = true;
     private bool jump = false;
@@ -57,7 +62,6 @@ public class Player : MonoBehaviour
         }
         else anim.SetBool("Walk", false);
 
-        
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
         {
@@ -83,6 +87,24 @@ public class Player : MonoBehaviour
             if (!facingRight)
             {
                 Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+            }
+        }
+        if (Input.GetButton("Fire4") && Time.time > nextFire) //tiro espalhado
+        {
+            nextFire = Time.time + fireRateEspalhado;
+            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+            GameObject Tiro1 = Instantiate(bulletPrefab, shotSpawner1.position, shotSpawner1.rotation);
+            GameObject Tiro2 = Instantiate(bulletPrefab, shotSpawner2.position, shotSpawner2.rotation);
+            GameObject Tiro3 = Instantiate(bulletPrefab, shotSpawner3.position, shotSpawner3.rotation);
+            GameObject Tiro4 = Instantiate(bulletPrefab, shotSpawner4.position, shotSpawner4.rotation);
+
+            if (!facingRight)
+            {
+                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+                Tiro1.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+                Tiro2.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+                Tiro3.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
+                Tiro4.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
             }
         }
     }
