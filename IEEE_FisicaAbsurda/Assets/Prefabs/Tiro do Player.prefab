@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -4639779967975374315}
   - component: {fileID: 8259630194669682558}
   - component: {fileID: 692418992971356419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiro do Player
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,9 +151,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2025041675325597955}
   - component: {fileID: 419373102279102978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiro
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

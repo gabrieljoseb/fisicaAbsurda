@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6201392076651731264}
   - component: {fileID: 4398624011962481317}
   - component: {fileID: 8322334359953023564}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tijolos_Inicial_Sem_Duto
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

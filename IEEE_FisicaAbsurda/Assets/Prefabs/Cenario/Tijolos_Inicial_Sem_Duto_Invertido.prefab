@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5222952150736182216}
   m_Layer: 10
   m_Name: Tijolos_Inicial_Sem_Duto_Invertido
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

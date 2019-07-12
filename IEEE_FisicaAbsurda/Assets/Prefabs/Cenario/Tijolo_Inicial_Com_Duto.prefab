@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2884788469534564408}
   m_Layer: 0
   m_Name: Tijolo_Inicial_Com_Duto
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

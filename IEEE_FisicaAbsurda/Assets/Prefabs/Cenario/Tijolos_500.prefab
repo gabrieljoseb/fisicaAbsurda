@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2915754085445621966}
   - component: {fileID: 3762861298661147461}
   - component: {fileID: 8713874362740826512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tijolos_500
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
