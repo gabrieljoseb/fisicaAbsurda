@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4178851883629837140}
   - component: {fileID: 2010445882998999238}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3977641166295753225}
   - component: {fileID: 7785741053947580276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 2461936573536998608}
   - component: {fileID: 6400308040337260854}
   - component: {fileID: 4170670114662675785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plataforma_Fixa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5288818932441877803}
   - component: {fileID: 1607332426740573578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097554630806970787}
   - component: {fileID: 4576423681035050704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
