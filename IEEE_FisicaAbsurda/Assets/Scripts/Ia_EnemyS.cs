@@ -29,6 +29,10 @@ public class Ia_EnemyS : Enemy
 
         viradoParaDireita = true;
     }
+    protected override void Update() //Sobrescreve o Update importado do Script Enemy
+    {
+
+    }
 
     // Update is called once per frame
     void FixedUpdate()

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6572953139339802653}
   - component: {fileID: 5067116572295186729}
-  - component: {fileID: 463229806039161191}
   - component: {fileID: 4306132174318364790}
   m_Layer: 0
   m_Name: "Plataforma_M\xF3vel_Correntes_1"
@@ -84,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &463229806039161191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968032828309606336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e39bf421e13d9f48a215be6793e9997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inicio: {fileID: 0}
-  fim: {fileID: 0}
-  velocidade: 0
-  vertival: 1
 --- !u!61 &4306132174318364790
 BoxCollider2D:
   m_ObjectHideFlags: 0
