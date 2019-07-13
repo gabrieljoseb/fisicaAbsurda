@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpforce;
     public GameObject bulletPrefab;
+    public Transform BracoPlayer;
     public Transform shotSpawner;
     public Transform shotSpawner1;
     public Transform shotSpawner2;
@@ -19,11 +20,13 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     private bool jump = false;
     private bool noChao = false;
+    private bool walk = false;
     private Animator anim;
     private Rigidbody2D rb;
     private Transform GroundCheck;
 
     static public bool isDead = false; //Registra se o Player está morto ou não.
+    private int theScale;
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
+            walk = true;
             transform.Translate(-Vector2.right * speed * Time.deltaTime);
             if (facingRight)
             {
@@ -53,6 +57,7 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            walk = true;
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             if (!facingRight)
             {
@@ -60,34 +65,37 @@ public class Player : MonoBehaviour
             }
             anim.SetBool("Walk", true);
         }
-        else anim.SetBool("Walk", false);
-
+        else
+        {
+            anim.SetBool("Walk", false);
+            walk = false;
+        }
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
         {
             nextFire = Time.time + fireRateSlow;
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
-            if (!facingRight)
+            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
+            /*if (!facingRight)
             {
                 Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }
+            }*/
         }
         if (Input.GetButton("Fire2")) //tiro laser
         {
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
-            if (!facingRight)
+            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
+            /*if (!facingRight)
             {
                 Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }
+            }*/
         }
         if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
         {
             nextFire = Time.time + fireRateSenoidal;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
-            if (!facingRight)
+            /*if (!facingRight)
             {
                 Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }
+            }*/
         }
         if (Input.GetButton("Fire4") && Time.time > nextFire) //tiro espalhado
         {
@@ -98,15 +106,20 @@ public class Player : MonoBehaviour
             GameObject Tiro3 = Instantiate(bulletPrefab, shotSpawner3.position, shotSpawner3.rotation);
             GameObject Tiro4 = Instantiate(bulletPrefab, shotSpawner4.position, shotSpawner4.rotation);
 
-            if (!facingRight)
+            /*if (!facingRight)
             {
                 Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
                 Tiro1.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
                 Tiro2.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
                 Tiro3.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
                 Tiro4.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }
+            }*/
         }
+    }
+
+    private void LateUpdate()
+    {
+        MousePosition();
     }
 
     void FixedUpdate()
@@ -124,5 +137,22 @@ public class Player : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    void MousePosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector2 direction = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - BracoPlayer.position.y);
+        BracoPlayer.transform.right = direction;
+        if(mousePos.x < BracoPlayer.position.x && facingRight && !walk)
+        {
+            Flip();
+            BracoPlayer.transform.right = -direction;
+        }
+        else if(mousePos.x > BracoPlayer.position.x && !facingRight && !walk)
+        {
+            Flip();
+        }
     }
 }
