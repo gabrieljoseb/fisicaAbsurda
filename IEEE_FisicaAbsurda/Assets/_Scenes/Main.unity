@@ -25962,7 +25962,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &1293672991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25976,6 +25976,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawner: {fileID: 87401818}
+  shotSpawner1: {fileID: 908016014}
+  shotSpawner2: {fileID: 599807777}
+  shotSpawner3: {fileID: 703617236}
+  shotSpawner4: {fileID: 1326926482}
 --- !u!212 &1293672992
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28563,7 +28567,7 @@ MonoBehaviour:
   jumpforce: 150
   bulletPrefab: {fileID: 3245822430717653622, guid: a81424dd9a159b6429e6417bf624f068,
     type: 3}
-  BracoPlayer: {fileID: 1293672988}
+  BracoPlayer: {fileID: 87401818}
   shotSpawner: {fileID: 87401818}
   shotSpawner1: {fileID: 908016014}
   shotSpawner2: {fileID: 599807777}

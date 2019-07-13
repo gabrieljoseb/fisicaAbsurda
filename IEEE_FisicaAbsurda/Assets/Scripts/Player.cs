@@ -75,27 +75,15 @@ public class Player : MonoBehaviour
         {
             nextFire = Time.time + fireRateSlow;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
-            /*if (!facingRight)
-            {
-                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }*/
         }
         if (Input.GetButton("Fire2")) //tiro laser
         {
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
-            /*if (!facingRight)
-            {
-                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }*/
         }
         if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
         {
             nextFire = Time.time + fireRateSenoidal;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
-            /*if (!facingRight)
-            {
-                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }*/
         }
         if (Input.GetButton("Fire4") && Time.time > nextFire) //tiro espalhado
         {
@@ -105,15 +93,6 @@ public class Player : MonoBehaviour
             GameObject Tiro2 = Instantiate(bulletPrefab, shotSpawner2.position, shotSpawner2.rotation);
             GameObject Tiro3 = Instantiate(bulletPrefab, shotSpawner3.position, shotSpawner3.rotation);
             GameObject Tiro4 = Instantiate(bulletPrefab, shotSpawner4.position, shotSpawner4.rotation);
-
-            /*if (!facingRight)
-            {
-                Tiro.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-                Tiro1.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-                Tiro2.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-                Tiro3.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-                Tiro4.transform.eulerAngles = new Vector3(0, -180, 0); //rotaciona 180graus para o tiro para o lado esquerdo
-            }*/
         }
     }
 
@@ -144,15 +123,31 @@ public class Player : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 direction = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - BracoPlayer.position.y);
+        /*Vector2 direction1 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner1.position.y);
+        Vector2 direction2 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner2.position.y);
+        Vector2 direction3 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner3.position.y);
+        Vector2 direction4 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner4.position.y);*/
         BracoPlayer.transform.right = direction;
-        if(mousePos.x < BracoPlayer.position.x && facingRight && !walk)
+        /*shotSpawner1.transform.right = direction1;
+        shotSpawner2.transform.right = direction2;
+        shotSpawner3.transform.right = direction3;
+        shotSpawner4.transform.right = direction4;*/
+        if (mousePos.x < BracoPlayer.position.x && facingRight && !walk)
         {
             Flip();
             BracoPlayer.transform.right = -direction;
+            /*shotSpawner1.transform.right = -direction1;
+            shotSpawner2.transform.right = -direction2;
+            shotSpawner3.transform.right = -direction3;
+            shotSpawner4.transform.right = -direction4;*/
         }
         else if(mousePos.x > BracoPlayer.position.x && !facingRight && !walk)
         {
             Flip();
+        }
+        else if(mousePos.x == BracoPlayer.position.x && !walk)
+        {
+            
         }
     }
 }
