@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ia_Enemy_Fly : MonoBehaviour
+public class Ia_Enemy_Fly : Enemy
 {
-    public float speed;
-    public float distance;
-    private bool facingRight = true;
+    private bool isMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -14,25 +12,38 @@ public class Ia_Enemy_Fly : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        Patrulha();
+        base.Update();
+
+        float distance = PlayerDistance();
+        isMoving = (distance <= attackDistance);
+
+        if (isMoving)
+        {
+            if ((target.position.x > transform.position.x) && !sprite.flipX)
+            {
+                Flipar();
+            }
+            else if((target.position.x < transform.position.x) && sprite.flipX)
+            {
+                Flipar();
+            }
+        }
+
+        if (isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, Mathf.Abs(speed) * Time.deltaTime);
+        }
     }
 
-    public void Patrulha()
+    float PlayerDistance()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        return Vector2.Distance(target.position, transform.position);
+    }
 
-        if (facingRight == true)
-        {
-            transform.eulerAngles = new Vector3(0, -180, 0);
-            facingRight = false;
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            facingRight = true;
-        }
+    void Flipar()
+    {
+        sprite.flipX = !sprite.flipX;
     }
 }
