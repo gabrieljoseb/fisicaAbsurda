@@ -141,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0068643093, y: 0.3583665}
+  m_Offset: {x: -0.0068643093, y: 0.33934247}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -152,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9614942, y: 0.41538715}
+  m_Size: {x: 1.9614942, y: 0.37733912}
   m_EdgeRadius: 0
 --- !u!1 &2865974050713814961
 GameObject:
@@ -433,7 +433,6 @@ GameObject:
   - component: {fileID: 4398390097380417518}
   - component: {fileID: 2337343878659698394}
   - component: {fileID: 6940138829294730900}
-  - component: {fileID: 6773306184137428869}
   m_Layer: 10
   m_Name: "Plataforma_M\xF3vel_Correntes_1 (1)"
   m_TagString: Untagged
@@ -522,29 +521,3 @@ MonoBehaviour:
   fim: {fileID: 7367302345806166192}
   velocidade: 1
   vertival: 1
---- !u!61 &6773306184137428869
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9039341404587042867}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.000000059604645, y: -5.6636257}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 12.5}
-    newSize: {x: 2.25, y: 12.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.1744556, y: 0.4424858}
-  m_EdgeRadius: 0

@@ -150,4 +150,19 @@ public class Player : MonoBehaviour
             
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "PlataformaMovel")
+        {
+            transform.parent = collision.transform; //Torna o Player filho da plataforma móvel, fazendo ele seguir a posição da plataforma.
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "PlataformaMovel")
+        {
+            transform.parent = null; //O Player para de ser filho da plataforma móvel, fazendo com que ele volte a se movimentar normalmente.
+        }
+    }
 }

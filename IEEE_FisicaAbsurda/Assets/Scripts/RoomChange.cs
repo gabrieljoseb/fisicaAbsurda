@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RoomChange : RandomSelection
 {
-    public GameObject porta;
-    public GameObject spawningLobby, spawningSala1, spawningSala2, spawningSala3, spawningSala4; //Recebem o Objeto que marcará a posição onde o player irá surgir no teletrasporte 
+    public GameObject spawningLobby, spawningSala1, spawningSala2; //, spawningSala3, spawningSala4; //Recebem o Objeto que marcará a posição onde o player irá surgir no teletrasporte 
 
     static public int proximaSala = 0;
     static public int salasConcluidas = 0;
@@ -18,7 +17,7 @@ public class RoomChange : RandomSelection
         {
             k += 1;
         }
-        else if(k < 4)
+        else if(k < 2)
         {
             proximaSala = ordemSalas[k]; //A "ordemSalas" retorna numeros entre 1 e 4, esses números corresponde as 4 salas do castelo que possuem dificuldade.   
             k += 1;
@@ -37,14 +36,14 @@ public class RoomChange : RandomSelection
                 player.transform.position = spawningSala2.transform.position;
                 salasConcluidas += 1;
                 break;
-            case 3:
+            /*case 3:
                 player.transform.position = spawningSala3.transform.position;
                 salasConcluidas += 1;
                 break;
             case 4:
                 player.transform.position = spawningSala4.transform.position;
                 salasConcluidas += 1;
-                break;
+                break;*/
             default:
                 Debug.Log("Sala Inválida");
                 break;

@@ -10,6 +10,8 @@ public class GeneralConfig : MonoBehaviour
     private GameObject menuPrincipal;
     [SerializeField]
     private GameObject pause;
+    private RandomSelection randS;
+
 
     private bool primeiraVezMenu; //Mostra se é a primeira vez dele no menu após abrir o jogo.
     static public bool estaPausado; //Variável que registra se o jogo está pausado ou não
@@ -28,6 +30,8 @@ public class GeneralConfig : MonoBehaviour
 
         primeiraVezMenu = true;
         MenuInicial(menuAtivo); //Será mantido temporariamente, apenas para facilitar no desenvolvimento do jogo.
+
+        randS = new RandomSelection();
     }
 
     private void Update()
@@ -76,6 +80,7 @@ public class GeneralConfig : MonoBehaviour
         }
         else if (statusMenu && !primeiraVezMenu) //Se ele for ativo sem ser a primeira vez..
         {
+            randS.ListaRandomSemRepeticao(RandomSelection.ordemSalas, 2); //Gera uma nova ordem das salas
             UnityEngine.SceneManagement.SceneManager.LoadScene("Main"); //Reinicia o Jogo
         }
     }
