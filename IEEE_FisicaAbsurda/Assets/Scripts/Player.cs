@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
     public Transform shotSpawner2;
     public Transform shotSpawner3;
     public Transform shotSpawner4;
-    private float fireRateSlow = 2f; //tiro devagar
-    private float fireRateSenoidal = 1f; //tiro senoidal
-    private float fireRateEspalhado = 1.3f; //tiro espalhado
+    private float fireRateSlow = 0.75f; //frquencia do tiro devagar
+    private float fireRateSenoidal = 0.5f; //frequencia do tiro senoidal
+    private float fireRateEspalhado = 1.3f; //frequencia tiro espalhado
     private float nextFire;
     private bool facingRight = true;
     private bool jump = false;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
             walk = false;
         }
 
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire) //tiro devagar
+        if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
         {
             nextFire = Time.time + fireRateSlow;
             GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
@@ -145,10 +145,10 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
-        else if(mousePos.x == BracoPlayer.position.x && !walk)
+        /*else if(mousePos.x == BracoPlayer.position.x && !walk)
         {
             
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -12,11 +12,8 @@ GameObject:
   - component: {fileID: 4111517327987603052}
   - component: {fileID: 3239932865182645651}
   - component: {fileID: 2613394843241190705}
-  - component: {fileID: -4639779967975374315}
-  - component: {fileID: 8259630194669682558}
-  - component: {fileID: 692418992971356419}
   m_Layer: 8
-  m_Name: Tiro do Player
+  m_Name: Tiro Devagar
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,49 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   destroyTime: 3.5
---- !u!114 &-4639779967975374315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3245822430717653622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9594674cb5d69bb4c8f693b44f1c8921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2.5
-  destroyTime: 3.5
---- !u!114 &8259630194669682558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3245822430717653622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ed4fde229cbb242b0be1330f334aee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  destroyTime: 2.5
-  amplitude: 0.09
---- !u!114 &692418992971356419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3245822430717653622}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd925c844a3b7f342a4814f9c655c544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  destroyTime: 5
 --- !u!1 &7006122645695084924
 GameObject:
   m_ObjectHideFlags: 0
