@@ -20,12 +20,12 @@ public class TiroSenoidal : MonoBehaviour
         
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //se houver colisão com um game object com a tag 
-        if (collision.gameObject.tag == nome da tag)
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Obj")
         {
             Destroy(gameObject); //o projetil se auto destruirá
         }
-    }*/
+    }
 }

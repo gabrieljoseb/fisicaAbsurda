@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     public Transform shotSpawner;
     private float fireRateSlow = 0.75f; //frquencia do tiro devagar
     private float fireRateSenoidal = 0.5f; //frequencia do tiro senoidal
-    private float fireRateEspalhado = 1.3f; //frequencia tiro espalhado
     private float nextFire;
     private bool facingRight = true;
     private bool jump = false;
@@ -74,7 +73,7 @@ public class Player : MonoBehaviour
             nextFire = Time.time + fireRateSlow;
             GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
         }
-        if (Input.GetButton("Fire2")) //tiro laser
+        if (Input.GetButton("Fire2") && !walk) //tiro laser
         {
             GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
         }
@@ -113,32 +112,17 @@ public class Player : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 direction = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - BracoPlayer.position.y);
-        /*Vector2 direction1 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner1.position.y);
-        Vector2 direction2 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner2.position.y);
-        Vector2 direction3 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner3.position.y);
-        Vector2 direction4 = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - shotSpawner4.position.y);*/
         BracoPlayer.transform.right = direction;
-        /*shotSpawner1.transform.right = direction1;
-        shotSpawner2.transform.right = direction2;
-        shotSpawner3.transform.right = direction3;
-        shotSpawner4.transform.right = direction4;*/
+
         if (mousePos.x < BracoPlayer.position.x -0.1f && facingRight && !walk)
         {
             Flip();
             BracoPlayer.transform.right = -direction;
-            /*shotSpawner1.transform.right = -direction1;
-            shotSpawner2.transform.right = -direction2;
-            shotSpawner3.transform.right = -direction3;
-            shotSpawner4.transform.right = -direction4;*/
         }
         else if(mousePos.x > BracoPlayer.position.x +0.1f && !facingRight && !walk)
         {
             Flip();
         }
-        /*else if(mousePos.x == BracoPlayer.position.x && !walk)
-        {
-            
-        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
