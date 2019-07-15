@@ -10,7 +10,6 @@ public class GeneralConfig : MonoBehaviour
     private GameObject menuPrincipal;
     [SerializeField]
     private GameObject pause;
-    private RandomSelection randS;
 
 
     private bool primeiraVezMenu; //Mostra se é a primeira vez dele no menu após abrir o jogo.
@@ -21,6 +20,7 @@ public class GeneralConfig : MonoBehaviour
     private void Awake()
     {
         Pause(false); //Desativa o Pause
+        MudarOrdem(); //Gera a ordem aleatória das salas
     }
 
     private void Start()
@@ -31,7 +31,7 @@ public class GeneralConfig : MonoBehaviour
         primeiraVezMenu = true;
         MenuInicial(menuAtivo); //Será mantido temporariamente, apenas para facilitar no desenvolvimento do jogo.
 
-        randS = new RandomSelection();
+        MudarOrdem(); //Gera uma nova ordem das salas e tiro
     }
 
     private void Update()
@@ -47,6 +47,13 @@ public class GeneralConfig : MonoBehaviour
                 Pause(!estaPausado); //Ativa/Desativa o Pause
             }
         }
+    }
+
+    public void MudarOrdem() //Altera a ordem do surgimento das salas e dos Tiros
+    {
+        RandomSelection rs = gameObject.AddComponent<RandomSelection>() as RandomSelection; //Instanciar a classe "RandomSelection" em um objeto "RandomSelection" chamado rs
+        rs.ListaRandomSemRepeticao(RandomSelection.ordemSalas, 2);//Cria a ordem em que as salas irão aparecer
+        rs.ListaRandomSemRepeticao(RandomSelection.ordemTiros, 3);//Cria a ordem em que as tiros irão aparecer
     }
 
     private void PararOJogo(bool ativo) //Para o jogo caso o parâmentro seja verdadeiro
@@ -80,7 +87,6 @@ public class GeneralConfig : MonoBehaviour
         }
         else if (statusMenu && !primeiraVezMenu) //Se ele for ativo sem ser a primeira vez..
         {
-            randS.ListaRandomSemRepeticao(RandomSelection.ordemSalas, 2); //Gera uma nova ordem das salas
             UnityEngine.SceneManagement.SceneManager.LoadScene("Main"); //Reinicia o Jogo
         }
     }

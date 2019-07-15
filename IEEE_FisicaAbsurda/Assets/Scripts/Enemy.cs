@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float attackDistanceY;//Distancia Y para efetuar o ataque
     public float attackDistance;//Distancia X e Y para efetuar ataque
 
-    protected Animator anim; 
+    //protected Animator anim; 
     protected bool facingRight = false; //Inverter o sprite
     protected Transform target; // O Alvo
     protected float targetDistanceX; //Distancia X entre Inimigo e o Player
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        anim = GetComponent<Animator>(); //Pega o animator do inimigo
+        //anim = GetComponent<Animator>(); //Pega o animator do inimigo
         rb2d = GetComponent<Rigidbody2D>(); //Pega o RigidBody do inimigo
         target = FindObjectOfType<Player>().transform; //Pega o Transform do Player
         sprite = GetComponent<SpriteRenderer>();

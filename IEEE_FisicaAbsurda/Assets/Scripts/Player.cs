@@ -6,13 +6,11 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float jumpforce;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefabDevagar;
+    public GameObject bulletPrefabSenoidal;
+    public GameObject bulletPrefabLaiser;
     public Transform BracoPlayer;
     public Transform shotSpawner;
-    public Transform shotSpawner1;
-    public Transform shotSpawner2;
-    public Transform shotSpawner3;
-    public Transform shotSpawner4;
     private float fireRateSlow = 0.75f; //frquencia do tiro devagar
     private float fireRateSenoidal = 0.5f; //frequencia do tiro senoidal
     private float fireRateEspalhado = 1.3f; //frequencia tiro espalhado
@@ -74,26 +72,18 @@ public class Player : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
         {
             nextFire = Time.time + fireRateSlow;
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
+            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
         }
         if (Input.GetButton("Fire2")) //tiro laser
         {
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, BracoPlayer.rotation);
+            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
         }
         if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
         {
             nextFire = Time.time + fireRateSenoidal;
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
+            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, shotSpawner.rotation);
         }
-        if (Input.GetButton("Fire4") && Time.time > nextFire) //tiro espalhado
-        {
-            nextFire = Time.time + fireRateEspalhado;
-            GameObject Tiro = Instantiate(bulletPrefab, shotSpawner.position, shotSpawner.rotation);
-            GameObject Tiro1 = Instantiate(bulletPrefab, shotSpawner1.position, shotSpawner1.rotation);
-            GameObject Tiro2 = Instantiate(bulletPrefab, shotSpawner2.position, shotSpawner2.rotation);
-            GameObject Tiro3 = Instantiate(bulletPrefab, shotSpawner3.position, shotSpawner3.rotation);
-            GameObject Tiro4 = Instantiate(bulletPrefab, shotSpawner4.position, shotSpawner4.rotation);
-        }
+
     }
 
     private void LateUpdate()
@@ -132,7 +122,7 @@ public class Player : MonoBehaviour
         shotSpawner2.transform.right = direction2;
         shotSpawner3.transform.right = direction3;
         shotSpawner4.transform.right = direction4;*/
-        if (mousePos.x < BracoPlayer.position.x && facingRight && !walk)
+        if (mousePos.x < BracoPlayer.position.x -0.1f && facingRight && !walk)
         {
             Flip();
             BracoPlayer.transform.right = -direction;
@@ -141,7 +131,7 @@ public class Player : MonoBehaviour
             shotSpawner3.transform.right = -direction3;
             shotSpawner4.transform.right = -direction4;*/
         }
-        else if(mousePos.x > BracoPlayer.position.x && !facingRight && !walk)
+        else if(mousePos.x > BracoPlayer.position.x +0.1f && !facingRight && !walk)
         {
             Flip();
         }

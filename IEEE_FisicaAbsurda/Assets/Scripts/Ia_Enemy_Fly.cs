@@ -6,12 +6,6 @@ public class Ia_Enemy_Fly : Enemy
 {
     private bool isMoving = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     protected override void Update()
     {
         base.Update();

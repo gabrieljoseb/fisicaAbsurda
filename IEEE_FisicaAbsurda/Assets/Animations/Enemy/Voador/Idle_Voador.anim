@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy_Fly
+  m_Name: Idle_Voador
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -28,8 +28,8 @@ AnimationClip:
     - time: 0.2
       value: {fileID: 6657046128381406734, guid: b06acf8317c79eb4a847bc1b804ea21a,
         type: 3}
-    - time: 0.3
-      value: {fileID: -1675025149711837622, guid: b06acf8317c79eb4a847bc1b804ea21a,
+    - time: 0.25
+      value: {fileID: 6657046128381406734, guid: b06acf8317c79eb4a847bc1b804ea21a,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -53,13 +53,13 @@ AnimationClip:
     - {fileID: 4801227835787818748, guid: b06acf8317c79eb4a847bc1b804ea21a, type: 3}
     - {fileID: -1675025149711837622, guid: b06acf8317c79eb4a847bc1b804ea21a, type: 3}
     - {fileID: 6657046128381406734, guid: b06acf8317c79eb4a847bc1b804ea21a, type: 3}
-    - {fileID: -1675025149711837622, guid: b06acf8317c79eb4a847bc1b804ea21a, type: 3}
+    - {fileID: 6657046128381406734, guid: b06acf8317c79eb4a847bc1b804ea21a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
