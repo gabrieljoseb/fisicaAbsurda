@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5923381453007145362}
   - component: {fileID: 4111517327987603052}
   - component: {fileID: 3239932865182645651}
-  - component: {fileID: 2613394843241190705}
+  - component: {fileID: 8259630194669682558}
   m_Layer: 8
-  m_Name: Tiro Devagar
+  m_Name: Tiro Senoidal
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0012106746, y: -0.0027549565}
@@ -81,7 +81,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2613394843241190705
+--- !u!114 &8259630194669682558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,11 +90,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3245822430717653622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3b9b432d793f8e489e242da3bb3dbda, type: 3}
+  m_Script: {fileID: 11500000, guid: 62ed4fde229cbb242b0be1330f334aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  destroyTime: 3.5
+  speed: 5
+  destroyTime: 2.5
+  amplitude: 0.09
 --- !u!1 &7006122645695084924
 GameObject:
   m_ObjectHideFlags: 0
