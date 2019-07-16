@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float attackDistanceY;//Distancia Y para efetuar o ataque
     public float attackDistance;//Distancia X e Y para efetuar ataque
 
-    //protected Animator anim; 
+    protected Animator anim; 
     protected bool facingRight = false; //Inverter o sprite
     protected Transform target; // O Alvo
     protected float targetDistanceX; //Distancia X entre Inimigo e o Player
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        //anim = GetComponent<Animator>(); //Pega o animator do inimigo
+        anim = GetComponent<Animator>(); //Pega o animator do inimigo
         rb2d = GetComponent<Rigidbody2D>(); //Pega o RigidBody do inimigo
         target = FindObjectOfType<Player>().transform; //Pega o Transform do Player
         sprite = GetComponent<SpriteRenderer>();
@@ -63,25 +63,22 @@ public class Enemy : MonoBehaviour
     }
 
     public void TookDamage(float damage)
-      {
-            health -= damage;
-            if (health >= 0)
-            {
-                StartCoroutine(TookdamageCoRoutine()); //Deixa o sprite vermelho quando toma dano.
-            }
-            else
-            {
-                if(this.name != "Robo01")
-                {
-                    Destroy(gameObject);
-                }
-            }
-
-        IEnumerator TookdamageCoRoutine()
+    {
+		health -= damage;
+        if (health > 0)
         {
-            sprite.color = Color.red; //cor do sprite ficará vermelha ao receber o dano.
-            yield return new WaitForSeconds(0.1f); //vai esperar 0.1 segundos.
-            sprite.color = Color.white; //cor do sprite volta ao normal.
+            StartCoroutine(TookdamageCoRoutine()); //Deixa o sprite vermelho quando toma dano.
         }
-     }
+		else
+		{
+			Destroy(gameObject);
+		}
+		
+		IEnumerator TookdamageCoRoutine()
+		{
+			sprite.color = Color.red; //cor do sprite ficará vermelha ao receber o dano.
+			yield return new WaitForSeconds(0.1f); //vai esperar 0.1 segundos.
+			sprite.color = Color.white; //cor do sprite volta ao normal.
+		}
+	}
 }
