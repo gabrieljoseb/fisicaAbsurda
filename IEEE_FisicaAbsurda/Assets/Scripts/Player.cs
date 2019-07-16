@@ -38,12 +38,12 @@ public class Player : MonoBehaviour
     {
         noChao = Physics2D.Linecast(transform.position, GroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (Input.GetKey(KeyCode.W) && noChao)
+        if (Input.GetKey(KeyCode.W) && noChao || Input.GetKey(KeyCode.UpArrow) && noChao)
         {
             jump = true;
             anim.SetTrigger("Jump");
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             walk = true;
             transform.Translate(-Vector2.right * speed * Time.deltaTime);
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             }
             anim.SetBool("Walk", true);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             walk = true;
             transform.Translate(Vector2.right * speed * Time.deltaTime);
