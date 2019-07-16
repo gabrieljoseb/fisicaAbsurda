@@ -6,21 +6,26 @@ public class RoomChange : RandomSelection
 {
     public GameObject spawningLobby, spawningSala1, spawningSala2; //, spawningSala3, spawningSala4; //Recebem o Objeto que marcará a posição onde o player irá surgir no teletrasporte 
 
+    static GameObject spawningLobby_, spawningSala1_, spawningSala2_;
+    static Collider2D Player;
     static public int proximaSala = 0;
     static public int salasConcluidas = 0;
     static public int TiroAtual;
 
-    static private int k = -1;
+    static public int k = -1;
 
     private void Start()
     {
+        spawningLobby_ = spawningLobby;
+        spawningSala1_ = spawningSala1;
+        spawningSala2_ = spawningSala2;
         TiroAtual = 1;
         proximaSala = 0;
         salasConcluidas = 0;
         k = -1;
     }
 
-    public void TrocaDeSala(Collider2D player)//Realiza o teletrasporte para a próxima sala por meio da lista de ordem randômica
+    static public void TrocaDeSala(Collider2D Player)//Realiza o teletrasporte para a próxima sala por meio da lista de ordem randômica
     {
         if(k == -1)
         {
@@ -31,22 +36,25 @@ public class RoomChange : RandomSelection
             proximaSala = ordemSalas[k]; //A "ordemSalas" retorna numeros entre 1 e 2.   
             k += 1;
         }
+
         Debug.Log("Salas Concluidas" + salasConcluidas);
+
+        Debug.Log("ProximaSala" + proximaSala);
         switch (proximaSala)
         {
             case 0:
                 TiroAtual = 1; //Será o tiro Lento
-                player.transform.position = spawningLobby.transform.position; //Teleporta para o Lobby
+                Player.transform.position = spawningLobby_.transform.position; //Teleporta para o Lobby
                 break;
             case 1:
                 TiroAtual = ordemTiros[1];
                 Debug.Log("Tiro atual é "+ TiroAtual);
-                player.transform.position = spawningSala1.transform.position;
+                Player.transform.position = spawningSala1_.transform.position;
                 salasConcluidas += 1;
                 break;
             case 2:
                 TiroAtual = ordemTiros[2];
-                player.transform.position = spawningSala2.transform.position;
+                Player.transform.position = spawningSala2_.transform.position;
                 salasConcluidas += 1;
                 break;
             /*case 3:
@@ -67,7 +75,7 @@ public class RoomChange : RandomSelection
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
-        { 
+        {
             TrocaDeSala(other);
         }
     }

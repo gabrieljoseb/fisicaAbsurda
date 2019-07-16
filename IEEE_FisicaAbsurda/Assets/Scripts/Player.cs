@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefabLaiser;
     public Transform BracoPlayer;
     public Transform shotSpawner;
+    public GameObject spawningLobby;
+    public GameObject mainCamera;
     private float fireRateSlow = 0.75f; //frquencia do tiro devagar
     private float fireRateSenoidal = 0.5f; //frequencia do tiro senoidal
     private float nextFire;
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     static public bool isDead; //Registra se o Player está morto ou não.
     private int theScale;
     private GameObject TiroAtual;
+   
 
     void Start()
     {
@@ -180,8 +183,37 @@ public class Player : MonoBehaviour
             transform.parent = collision.transform; //Torna o Player filho da plataforma móvel, fazendo ele seguir a posição da plataforma
         }
     }
-		
-	void resetInvulnerability()
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("EnemyBullet")))
+        {
+            TookDamage(1.0f);
+            invulnerable = true;
+            Invoke("resetInvulnerability", 1);
+        }
+    }
+    
+    public void respawning()
+    {
+        if (isDead)
+        {
+            if (mainCamera.transform.rotation.z != 0)
+            {
+                mainCamera.transform.Rotate(new Vector3(0, 0, -180)); //Desvira a camera caso esteja ao contrário
+            }
+            health = 3.0f;
+            life1.SetActive(true); //apaga o primeiro coração de vida
+            life2.SetActive(true);
+            life3.SetActive(true);
+            isDead = false;
+            anim.SetBool("isDead", isDead); //Para a Animação de morte
+            RoomChange.k -= 1;
+            gameObject.transform.position = spawningLobby.transform.position;
+        }
+    }
+
+    void resetInvulnerability()
 	{
 		invulnerable = false;
 	}
@@ -195,6 +227,7 @@ public class Player : MonoBehaviour
             life1.SetActive(false); //apaga o primeiro coração de vida
 			life2.SetActive(false);
 			life3.SetActive(false);
+            anim.SetBool("isDead", isDead); //Inicia a Animação de morte
         }
         else
 		{
