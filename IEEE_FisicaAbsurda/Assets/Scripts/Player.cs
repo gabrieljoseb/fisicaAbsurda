@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float jumpforce;
+	public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
     public GameObject bulletPrefabDevagar;
     public GameObject bulletPrefabSenoidal;
     public GameObject bulletPrefabLaiser;
@@ -19,88 +22,90 @@ public class Player : MonoBehaviour
     private bool noChao = false;
     private bool walk = false;
     private Animator anim;
+	private SpriteRenderer sprite;
     private Rigidbody2D rb;
     private Transform GroundCheck;
+	private bool invulnerable = false;
 
-    static public bool isDead = false; //Registra se o Player está morto ou não.
+	static public float health;
+    static public bool isDead; //Registra se o Player está morto ou não.
     private int theScale;
-    private GameObject TiroAtual;
 
     void Start()
     {
+		health = 3.0f;
+		isDead = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+		sprite = GetComponent<SpriteRenderer>();
         GroundCheck = gameObject.transform.Find("GroundCheck");
+		life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        noChao = Physics2D.Linecast(transform.position, GroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+		if(!isDead)
+		{
+			noChao = Physics2D.Linecast(transform.position, GroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (Input.GetKey(KeyCode.W) && noChao)
-        {
-            jump = true;
-            anim.SetTrigger("Jump");
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            walk = true;
-            transform.Translate(-Vector2.right * speed * Time.deltaTime);
-            if (facingRight)
+			if (Input.GetKey(KeyCode.W) && noChao)
+			{
+				jump = true;
+				anim.SetTrigger("Jump");
+			}
+			if (Input.GetKey(KeyCode.A))
+			{
+				walk = true;
+				transform.Translate(-Vector2.right * speed * Time.deltaTime);
+				if (facingRight)
+				{
+					Flip();
+				}
+				anim.SetBool("Walk", true);
+			}
+			else if (Input.GetKey(KeyCode.D))
+			{
+				walk = true;
+				transform.Translate(Vector2.right * speed * Time.deltaTime);
+				if (!facingRight)
+				{
+					Flip();
+				}
+				anim.SetBool("Walk", true);
+			}
+			else
+			{
+				anim.SetBool("Walk", false);
+				walk = false;
+			}
+
+			if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
+			{
+				nextFire = Time.time + fireRateSlow;
+				GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
+			}
+			if (Input.GetButton("Fire2") && !walk) //tiro laser
+			{
+				GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
+			}
+			if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
+			{
+				nextFire = Time.time + fireRateSenoidal;
+				GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, shotSpawner.rotation);
+			}
+			            
+			if (health < 3.0f)
             {
-                Flip();
+                life3.SetActive(false);
             }
-            anim.SetBool("Walk", true);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            walk = true;
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            if (!facingRight)
+			if (health < 2.0f)
             {
-                Flip();
+                life2.SetActive(false);
             }
-            anim.SetBool("Walk", true);
-        }
-        else
-        {
-            anim.SetBool("Walk", false);
-            walk = false;
-        }
-
-        switch (RoomChange.TiroAtual) //Verifica se foi alterado o Tiro Atual
-        {
-            case 1:
-                TiroAtual = bulletPrefabDevagar; //Tiro Lento
-                break;
-            case 2:
-                TiroAtual = bulletPrefabSenoidal; //Tiro Senoidal 
-                break;
-            case 3:
-                TiroAtual = bulletPrefabLaiser; //Tiro Laser
-                break;
-            default:
-                TiroAtual = bulletPrefabSenoidal;
-                Debug.Log("Deu erro na atibuição do tiro, Script do Player");
-                break;
-        }
-
-        if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
-        {
-            nextFire = Time.time + fireRateSlow;
-            GameObject Tiro = Instantiate(TiroAtual, shotSpawner.position, BracoPlayer.rotation);
-        }
-        /*if (Input.GetButton("Fire2") && !walk) //tiro laser
-        {
-            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
-        }
-        if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
-        {
-            nextFire = Time.time + fireRateSenoidal;
-            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, shotSpawner.rotation);
-        }*/
-
+		}
     }
 
     private void LateUpdate()
@@ -143,14 +148,56 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+		if (!invulnerable) 
+        {
+			if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("EnemyBullet")))
+			{
+				TookDamage(1.0f);
+				invulnerable = true;
+				Invoke("resetInvulnerability", 1);
+			}
+			if (collision.gameObject.CompareTag("Trap"))
+			{
+				TookDamage(3.0f);
+			}
+		}
         if(collision.transform.tag == "PlataformaMovel")
         {
             transform.parent = collision.transform; //Torna o Player filho da plataforma móvel, fazendo ele seguir a posição da plataforma.
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+	
+	void TookDamage(float damage)
+    {
+        health -= damage; //vida = vida - dano
+        if (health <= 0)
+        {
+            isDead = true;
+            life1.SetActive(false); //apaga o primeiro coração de vida
+			life2.SetActive(false);
+			life3.SetActive(false);
+        }
+        else
+		{
+			StartCoroutine(TookdamageCoRoutine());
+		}
+    }
+	
+	void resetInvulnerability()
+	{
+		invulnerable = false;
+	}
+	
+	IEnumerator TookdamageCoRoutine()
+    {
+		sprite.color = Color.red; //cor do sprite ficará vermelha ao receber o dano
+		yield return new WaitForSeconds(0.1f); //vai esperar 0.1 segundos.
+		sprite.color = Color.white; //cor do sprite volta ao normal.
+    }
+	
+    void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.transform.tag == "PlataformaMovel")
         {
