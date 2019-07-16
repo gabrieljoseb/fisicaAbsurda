@@ -605,6 +605,80 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!1 &19024935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19024936}
+  - component: {fileID: 19024938}
+  - component: {fileID: 19024937}
+  m_Layer: 5
+  m_Name: Vida1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &19024936
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19024935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1413813782}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 58, y: -50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &19024937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19024935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 57814950f9d873746a3a208c1fbd549d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &19024938
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19024935}
+  m_CullTransparentMesh: 0
 --- !u!1001 &25057779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2840,6 +2914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3594,6 +3673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
@@ -4925,6 +5009,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2057849426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &230689535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230689536}
+  - component: {fileID: 230689538}
+  - component: {fileID: 230689537}
+  m_Layer: 5
+  m_Name: Vida2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &230689536
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230689535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1413813782}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 148, y: -50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &230689537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230689535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 57814950f9d873746a3a208c1fbd549d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &230689538
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230689535}
+  m_CullTransparentMesh: 0
 --- !u!1001 &236426174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7821,6 +7979,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7986,6 +8149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
@@ -9656,6 +9824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11008,6 +11181,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12138,6 +12316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12771,6 +12954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
@@ -14575,6 +14763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16166,6 +16359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
@@ -24646,6 +24844,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27456,6 +27659,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1311683586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1314336439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314336440}
+  - component: {fileID: 1314336442}
+  - component: {fileID: 1314336441}
+  m_Layer: 5
+  m_Name: Vida3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1314336440
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314336439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1413813782}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 238, y: -50}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1314336441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314336439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 57814950f9d873746a3a208c1fbd549d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1314336442
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314336439}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1318307999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29191,6 +29468,107 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f2f3e1a24346cb4aa592e119ee24c14, type: 3}
+--- !u!1 &1413813778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413813782}
+  - component: {fileID: 1413813781}
+  - component: {fileID: 1413813780}
+  - component: {fileID: 1413813779}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1413813779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413813778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1413813780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413813778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1413813781
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413813778}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1413813782
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413813778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 19024936}
+  - {fileID: 230689536}
+  - {fileID: 1314336440}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!4 &1421311248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6219712806576271353, guid: 352599bd6bb71614a90f5d8c613abb5e,
@@ -29554,6 +29932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   jumpforce: 150
+  life1: {fileID: 19024935}
+  life2: {fileID: 230689535}
+  life3: {fileID: 1314336439}
   bulletPrefabDevagar: {fileID: 3245822430717653622, guid: a81424dd9a159b6429e6417bf624f068,
     type: 3}
   bulletPrefabSenoidal: {fileID: 3245822430717653622, guid: 9dec33d02789da84594682ec86c37e97,
@@ -36486,6 +36867,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39732,6 +40118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41680,6 +42071,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Espinhos_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43122,6 +43518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}
@@ -45320,6 +45721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Espinhos_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819262397581104270, guid: 4135e315cfa6b794eac74c2ee3619d3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 612564086424530367, guid: 4135e315cfa6b794eac74c2ee3619d3b,
         type: 3}

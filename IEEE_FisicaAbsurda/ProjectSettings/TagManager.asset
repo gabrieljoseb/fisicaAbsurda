@@ -11,6 +11,7 @@ TagManager:
   - Inicio
   - Fim
   - PlataformaMovel
+  - Trap
   layers:
   - Default
   - TransparentFX
