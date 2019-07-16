@@ -8141,7 +8141,7 @@ GameObject:
   - component: {fileID: 416493281}
   m_Layer: 0
   m_Name: Plataformas
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20734,7 +20734,7 @@ GameObject:
   - component: {fileID: 993042008}
   m_Layer: 0
   m_Name: Inimigos
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20933,7 +20933,7 @@ GameObject:
   - component: {fileID: 1012995303}
   m_Layer: 0
   m_Name: Inimigos
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23416,7 +23416,7 @@ GameObject:
   - component: {fileID: 1113301638}
   m_Layer: 0
   m_Name: Part1
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39663,7 +39663,7 @@ GameObject:
   - component: {fileID: 1863319584}
   m_Layer: 0
   m_Name: Paredes/Solo
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
