@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     static public bool isDead = false; //Registra se o Player está morto ou não.
     private int theScale;
+    private GameObject TiroAtual;
 
     void Start()
     {
@@ -68,12 +69,29 @@ public class Player : MonoBehaviour
             walk = false;
         }
 
+        switch (RoomChange.TiroAtual) //Verifica se foi alterado o Tiro Atual
+        {
+            case 1:
+                TiroAtual = bulletPrefabDevagar; //Tiro Lento
+                break;
+            case 2:
+                TiroAtual = bulletPrefabSenoidal; //Tiro Senoidal 
+                break;
+            case 3:
+                TiroAtual = bulletPrefabLaiser; //Tiro Laser
+                break;
+            default:
+                TiroAtual = bulletPrefabSenoidal;
+                Debug.Log("Deu erro na atibuição do tiro, Script do Player");
+                break;
+        }
+
         if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
         {
             nextFire = Time.time + fireRateSlow;
-            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
+            GameObject Tiro = Instantiate(TiroAtual, shotSpawner.position, BracoPlayer.rotation);
         }
-        if (Input.GetButton("Fire2") && !walk) //tiro laser
+        /*if (Input.GetButton("Fire2") && !walk) //tiro laser
         {
             GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
         }
@@ -81,7 +99,7 @@ public class Player : MonoBehaviour
         {
             nextFire = Time.time + fireRateSenoidal;
             GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, shotSpawner.rotation);
-        }
+        }*/
 
     }
 

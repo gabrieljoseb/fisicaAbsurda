@@ -8,11 +8,13 @@ public class RoomChange : RandomSelection
 
     static public int proximaSala = 0;
     static public int salasConcluidas = 0;
+    static public int TiroAtual;
 
     static private int k = -1;
 
     private void Start()
     {
+        TiroAtual = 1;
         proximaSala = 0;
         salasConcluidas = 0;
         k = -1;
@@ -33,13 +35,16 @@ public class RoomChange : RandomSelection
         switch (proximaSala)
         {
             case 0:
+                TiroAtual = 1; //Será o tiro Lento
                 player.transform.position = spawningLobby.transform.position; //Teleporta para o Lobby
                 break;
             case 1:
+                TiroAtual = ordemTiros[1];
                 player.transform.position = spawningSala1.transform.position;
                 salasConcluidas += 1;
                 break;
             case 2:
+                TiroAtual = ordemTiros[2];
                 player.transform.position = spawningSala2.transform.position;
                 salasConcluidas += 1;
                 break;

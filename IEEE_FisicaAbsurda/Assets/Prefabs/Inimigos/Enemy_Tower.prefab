@@ -9637,7 +9637,7 @@ MonoBehaviour:
   speed: 0
   attackDistanceX: 10
   attackDistanceY: 10
-  attackDistance: 0.5
+  attackDistance: 5
   bulletPrefab: {fileID: 8980236538296668771, guid: 84f07639edcce7d419d29fb2ca0f3111,
     type: 3}
   shotSpawner: {fileID: 382763068689526649}
