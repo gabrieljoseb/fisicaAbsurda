@@ -15,6 +15,7 @@ public class MenuSettings : MonoBehaviour
 
     private Resolution[] resolucoesSuportadas; //Irá armazenar o Array das resoluções suportadas pelo monitor
     private int modoJanelaAtivo; //Caso o modo janela fique ativo o valor será 1 senão será 0.
+    
 
 
     //====================BOTÕES====================
