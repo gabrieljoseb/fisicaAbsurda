@@ -40,6 +40,7 @@ public class RoomChange : RandomSelection
                 break;
             case 1:
                 TiroAtual = ordemTiros[1];
+                Debug.Log("Tiro atual é "+ TiroAtual);
                 player.transform.position = spawningSala1.transform.position;
                 salasConcluidas += 1;
                 break;

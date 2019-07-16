@@ -88,19 +88,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time > nextFire) //tiro devagar
         {
-            nextFire = Time.time + fireRateSlow;
+            if(TiroAtual != bulletPrefabLaiser)
+            {
+                nextFire = Time.time + fireRateSlow;
+            }
             GameObject Tiro = Instantiate(TiroAtual, shotSpawner.position, BracoPlayer.rotation);
         }
-        /*if (Input.GetButton("Fire2") && !walk) //tiro laser
-        {
-            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, BracoPlayer.rotation);
-        }
-        if (Input.GetButton("Fire3") && Time.time > nextFire) //tiro senoidal
-        {
-            nextFire = Time.time + fireRateSenoidal;
-            GameObject Tiro = Instantiate(bulletPrefabDevagar, shotSpawner.position, shotSpawner.rotation);
-        }*/
-
     }
 
     private void LateUpdate()
@@ -132,12 +125,12 @@ public class Player : MonoBehaviour
         Vector2 direction = new Vector2(mousePos.x - BracoPlayer.position.x, mousePos.y - BracoPlayer.position.y);
         BracoPlayer.transform.right = direction;
 
-        if (mousePos.x < BracoPlayer.position.x -0.1f && facingRight && !walk)
+        if (mousePos.x < BracoPlayer.position.x -0.8f && facingRight && !walk)
         {
             Flip();
             BracoPlayer.transform.right = -direction;
         }
-        else if(mousePos.x > BracoPlayer.position.x +0.1f && !facingRight && !walk)
+        else if(mousePos.x > BracoPlayer.position.x +0.8f && !facingRight && !walk)
         {
             Flip();
         }
