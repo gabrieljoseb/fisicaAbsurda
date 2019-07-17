@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GeneralConfig : MonoBehaviour
 {
-    public bool menuAtivo; //Será mantido temporariamente, apenas para facilitar no desenvolvimento do jogo.
     [Space(20)]
     [SerializeField] //Torna visivel na interface da Unity a variável privada.
     private GameObject menuPrincipal;
@@ -26,10 +25,8 @@ public class GeneralConfig : MonoBehaviour
     private void Start()
     {
         primeiraVezMenu = true;
+        menuAtivado = true;
         MenuInicial(true); //Ativa o Menu
-
-        primeiraVezMenu = true;
-        MenuInicial(menuAtivo); //Será mantido temporariamente, apenas para facilitar no desenvolvimento do jogo.
 
         MudarOrdem(); //Gera uma nova ordem das salas e tiro
     }
@@ -42,7 +39,7 @@ public class GeneralConfig : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) && !menuAtivado) //Verifica se o "ESC" OU "P" foi apertado E se o Menu NÃO está desativado
+            if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) && !menuAtivado) //Verifica se o "ESC" OU "P" foi apertado E se o Menu NÃO está desativado
             {
                 Pause(!estaPausado); //Ativa/Desativa o Pause
             }

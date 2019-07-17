@@ -25,5 +25,13 @@ public class Ia_Enemy_Tower : Enemy
             nextFire = Time.time + fireRate;
         }
     }
+    protected override void Update()
+    {
+        base.Update();
+        if (Mathf.Abs(targetDistanceX) <= attackDistanceX)
+        {
+            Attack = true;
+        }
 
+    }
 }

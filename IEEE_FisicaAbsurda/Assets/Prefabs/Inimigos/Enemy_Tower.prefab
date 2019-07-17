@@ -9651,11 +9651,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010953963, y: -0.022138715}
-  m_Size: {x: 1.1832939, y: 2.0285933}
+  m_Offset: {x: -0.0006432235, y: -0.11493504}
+  m_Size: {x: 0.9152146, y: 2.8328307}
   m_Direction: 0
 --- !u!50 &4441536060251886059
 Rigidbody2D:
