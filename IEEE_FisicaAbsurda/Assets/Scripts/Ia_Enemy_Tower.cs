@@ -14,7 +14,7 @@ public class Ia_Enemy_Tower : Enemy
 
     void Start()
     {
-        health = 5.0f;
+        health = 4.0f;
     }
 
     private void LateUpdate()

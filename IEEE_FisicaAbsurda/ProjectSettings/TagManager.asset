@@ -12,6 +12,9 @@ TagManager:
   - Fim
   - PlataformaMovel
   - Trap
+  - TiroSenoidal
+  - TiroLento
+  - TiroLaser
   layers:
   - Default
   - TransparentFX

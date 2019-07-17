@@ -48,17 +48,17 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("PlayerBullet")) //dá dano se o elemento for tipo PlayerBullet
+        if (other.gameObject.CompareTag("TiroLento")) //dá dano se o elemento for tipo PlayerBullet
         {
             TookDamage(1.0f);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("PlayerBullet")) //dá dano se o elemento for tipo PlayerBullet
+        if (other.gameObject.CompareTag("TiroLaser")) //dá dano se o elemento for tipo PlayerBullet
         {
-            TookDamage(1.0f);
+            TookDamage(0.3f);
+        }
+        if (other.gameObject.CompareTag("TiroSenoidal")) //dá dano se o elemento for tipo PlayerBullet
+        {
+            TookDamage(3.0f);
         }
     }
 
@@ -70,11 +70,8 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(TookdamageCoRoutine()); //Deixa o sprite vermelho quando toma dano.
             }
             else
-            {
-                if(this.name != "Robo01")
-                {
-                    Destroy(gameObject);
-                }
+            {                
+                Destroy(gameObject);    
             }
 
         IEnumerator TookdamageCoRoutine()

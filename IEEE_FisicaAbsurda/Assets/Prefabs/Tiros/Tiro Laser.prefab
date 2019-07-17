@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4639779967975374315}
   m_Layer: 8
   m_Name: Tiro Laser
-  m_TagString: PlayerBullet
+  m_TagString: TiroLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

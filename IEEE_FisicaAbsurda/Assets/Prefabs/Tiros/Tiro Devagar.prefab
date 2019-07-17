@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2613394843241190705}
   m_Layer: 8
   m_Name: Tiro Devagar
-  m_TagString: PlayerBullet
+  m_TagString: TiroLento
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
