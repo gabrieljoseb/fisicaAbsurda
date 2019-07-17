@@ -6,8 +6,8 @@ public class Fim_do_Jogo : MonoBehaviour
 {
     public GameObject Texto;
     public GameObject Credito;
-    public GameObject HUD_Pedras;
-    public GameObject HUD_Vidas;
+    public GameObject HUD;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +22,6 @@ public class Fim_do_Jogo : MonoBehaviour
         Texto.SetActive(true);
         yield return new WaitForSeconds(7f);
         Credito.SetActive(true);
-        HUD_Pedras.SetActive(false);
-        HUD_Vidas.SetActive(false);
+        HUD.SetActive(false);
     }
 }
