@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        health = 3.0f; //inicializa a vida com 3 pontos
+        health = 5.0f; //inicializa a vida com 3 pontos
 		isDead = false;
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
 			}
 			if (collision.gameObject.CompareTag("Trap"))
 			{
-				TookDamage(3.0f);
+				TookDamage(5.0f);
 			}
 		}
         if(collision.transform.tag == "PlataformaMovel")
@@ -210,16 +210,16 @@ public class Player : MonoBehaviour
     {
         if (isDead)
         {
-            if (mainCamera.transform.rotation.z != 0)
+            if (TrocaDePespectivaSala2.cameraInvertida)
             {
                 mainCamera.transform.Rotate(new Vector3(0, 0, -180)); //Desvira a camera caso esteja ao contrário
             }
-            health = 3.0f;
+            health = 5.0f;
             life1.SetActive(true); //apaga o primeiro coração de vida
             life2.SetActive(true);
             life3.SetActive(true);
-			life4.SetActive(false);
-			life5.SetActive(false);
+			life4.SetActive(true);
+			life5.SetActive(true);
             isDead = false;
             anim.SetBool("isDead", isDead); //Para a Animação de morte
             RoomChange.k -= 1;
