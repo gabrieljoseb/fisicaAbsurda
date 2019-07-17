@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 	public GameObject life1;
     public GameObject life2;
     public GameObject life3;
+	public GameObject life4;
+	public GameObject life5;
     public GameObject bulletPrefabDevagar;
     public GameObject bulletPrefabSenoidal;
     public GameObject bulletPrefabLaiser;
@@ -46,6 +48,8 @@ public class Player : MonoBehaviour
 		life1.SetActive(true);
         life2.SetActive(true);
         life3.SetActive(true);
+		life4.SetActive(true);
+		life5.SetActive(true);
     }
 
     // Update is called once per frame
@@ -112,6 +116,14 @@ public class Player : MonoBehaviour
 				GameObject Tiro = Instantiate(TiroAtual, shotSpawner.position, BracoPlayer.rotation);
 			}
 			
+			if (health < 5.0f)
+            {
+                life5.SetActive(false);
+            }
+			if (health < 4.0f)
+            {
+                life4.SetActive(false);
+            }
 			if (health < 3.0f)
             {
                 life3.SetActive(false);
@@ -206,6 +218,8 @@ public class Player : MonoBehaviour
             life1.SetActive(true); //apaga o primeiro coração de vida
             life2.SetActive(true);
             life3.SetActive(true);
+			life4.SetActive(false);
+			life5.SetActive(false);
             isDead = false;
             anim.SetBool("isDead", isDead); //Para a Animação de morte
             RoomChange.k -= 1;
@@ -227,6 +241,8 @@ public class Player : MonoBehaviour
             life1.SetActive(false); //apaga o primeiro coração de vida
 			life2.SetActive(false);
 			life3.SetActive(false);
+			life4.SetActive(false);
+			life5.SetActive(false);
             anim.SetBool("isDead", isDead); //Inicia a Animação de morte
         }
         else
