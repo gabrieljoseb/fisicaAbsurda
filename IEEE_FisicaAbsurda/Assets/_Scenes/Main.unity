@@ -34682,9 +34682,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1205807200}
   - component: {fileID: 1205807201}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Parede_Esquerda
-  m_TagString: Untagged
+  m_TagString: Obj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34716,7 +34716,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 15.518471, y: 0.008070469}
+  m_Offset: {x: 21.944855, y: 0.008070469}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -34727,7 +34727,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16427612, y: 15.573873}
+  m_Size: {x: 13.017038, y: 15.573873}
   m_EdgeRadius: 0
 --- !u!1001 &1206450384
 PrefabInstance:
@@ -40920,7 +40920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445099916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.84, y: 67.5, z: -0.38}
+  m_LocalPosition: {x: 4.81, y: 67.61, z: -0.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 109787091}
