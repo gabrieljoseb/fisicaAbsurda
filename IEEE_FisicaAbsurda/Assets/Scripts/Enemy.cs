@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.CompareTag("TiroLaser")) //dá dano se o elemento for tipo PlayerBullet
         {
-            TookDamage(0.3f);
+            TookDamage(0.1f);
         }
         if (other.gameObject.CompareTag("TiroSenoidal")) //dá dano se o elemento for tipo PlayerBullet
         {

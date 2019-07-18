@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TiroSenoidal : MonoBehaviour
 {
-    public float speed = 5; //velocidade da bala
+    public float speed = 3.5f; //velocidade da bala
     public float destroyTime = 2.5f; //tempo para que a bala suma
     public float amplitude = 0.05f;
 

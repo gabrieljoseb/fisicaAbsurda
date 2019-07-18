@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private Transform GroundCheck;
 	private bool invulnerable = false;
 
+    static public bool cameraInvertida = false;
     static public float health;
     static public bool isDead; //Registra se o Player está morto ou não.
     private int theScale;
@@ -133,6 +134,22 @@ public class Player : MonoBehaviour
                 life2.SetActive(false);
             }
 		}
+
+        //=========Faz a camera ficar invertida na Sala2 de acordo com a posição e a variavével de comparação...============
+        if((gameObject.transform.position.x > -6.6f) && (gameObject.transform.position.x < 30.2f) && (gameObject.transform.position.y > 193f) && (gameObject.transform.position.y < 204.5f) && !cameraInvertida)
+        {
+            mainCamera.transform.Rotate(new Vector3(0, 0, 180));
+            cameraInvertida = true;
+        }
+        else if(!((gameObject.transform.position.x > -6.6f) && (gameObject.transform.position.x < 30.2f) && (gameObject.transform.position.y > 193f) && (gameObject.transform.position.y < 204.5f)) && cameraInvertida)
+        {
+            if ((mainCamera.transform.eulerAngles.z > 179f) && (mainCamera.transform.eulerAngles.z < 181f))
+            {
+                mainCamera.transform.Rotate(new Vector3(0, 0, -180)); //Desvira a camera caso esteja ao contrário
+                cameraInvertida = false;
+            }
+        }
+        //========================================
 	}
 
     private void LateUpdate()
@@ -210,10 +227,6 @@ public class Player : MonoBehaviour
     {
         if (isDead)
         {
-            if (TrocaDePespectivaSala2.cameraInvertida)
-            {
-                mainCamera.transform.Rotate(new Vector3(0, 0, -180)); //Desvira a camera caso esteja ao contrário
-            }
             health = 5.0f;
             life1.SetActive(true); //apaga o primeiro coração de vida
             life2.SetActive(true);
