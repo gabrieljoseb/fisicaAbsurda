@@ -53,7 +53,7 @@ public class GeneralConfig : MonoBehaviour
         rs.ListaRandomSemRepeticao(RandomSelection.ordemTiros, 3);//Cria a ordem em que as tiros irão aparecer
     }
 
-    private void PararOJogo(bool ativo) //Para o jogo caso o parâmentro seja verdadeiro
+    public static void PararOJogo(bool ativo) //Para o jogo caso o parâmentro seja verdadeiro
     {
         if (ativo) //Se ativo = true
         {
