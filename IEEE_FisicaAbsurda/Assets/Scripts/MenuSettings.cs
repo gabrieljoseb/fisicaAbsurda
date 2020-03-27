@@ -15,14 +15,10 @@ public class MenuSettings : MonoBehaviour
 
     private Resolution[] resolucoesSuportadas; //Irá armazenar o Array das resoluções suportadas pelo monitor
     private int modoJanelaAtivo; //Caso o modo janela fique ativo o valor será 1 senão será 0.
+    
 
 
     //====================BOTÕES====================
-    public void Jogar()
-    {
-        MudarOrdem();
-        this.gameObject.SetActive(false);
-    }
 
     public void Configuracao(bool ativo)
     {
@@ -46,15 +42,7 @@ public class MenuSettings : MonoBehaviour
     {
         ChecarResolucoes();
         ResgatarPreferencias();
-        MudarOrdem(); //Gera a ordem aleatória das salas
         menuConfig.SetActive(false); //Deixa o Menu de Configurações desativado na inicialização do jogo
-    }
-
-    private void MudarOrdem() //Altera a ordem do surgimento das salas e dos Tiros
-    {
-        RandomSelection rs = gameObject.AddComponent<RandomSelection>() as RandomSelection; //Instanciar a classe "RandomSelection" em um objeto "RandomSelection" chamado rs
-        rs.ListaRandomSemRepeticao(RandomSelection.ordemSalas, 4);//Cria a ordem em que as salas irão aparecer
-        rs.ListaRandomSemRepeticao(RandomSelection.ordemTiros, 4);//Cria a ordem em que as tiros irão aparecer
     }
     
     private void ChecarResolucoes()

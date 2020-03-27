@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
+  - Obj
+  - Inicio
+  - Fim
+  - PlataformaMovel
+  - Trap
+  - TiroSenoidal
+  - TiroLento
+  - TiroLaser
   layers:
   - Default
   - TransparentFX
@@ -13,11 +24,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player Bullet
+  - Player
+  - Ground
+  - Enemy
+  - Enemy Bullet
   - 
   - 
   - 
